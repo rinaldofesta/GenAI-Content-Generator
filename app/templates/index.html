@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>GenAI Content Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>GenAI Content Generator</h1>
+        <form method="POST">
+            <label for="tags">Enter tags (comma-separated):</label>
+            <input type="text" id="tags" name="tags" required>
+            <button type="submit">Generate Content</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% if content %}
+        <div class="content">
+            <h2>Generated Content</h2>
+            <p>{{ content }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

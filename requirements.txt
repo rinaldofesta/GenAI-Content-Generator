@@ -1,0 +1,7 @@
+Flask
+requests
+tweepy
+openai
+schedule
+celery
+redis
