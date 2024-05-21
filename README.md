@@ -1,1 +1,1 @@
-A web app for content generation by tags, retrieving real time resources from viral tweets and news in trends.
+An application to fetch real-time news and generate social media content using GenAI.
